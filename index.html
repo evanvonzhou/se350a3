@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Assignment 3 Base code Adapted from W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="css/header_sample.css" rel="stylesheet" type="text/css">
+<link href="css/Announcement.css" rel="stylesheet" type="text/css">
+<link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"><style>
+
+html,body,h1,h2,h3,h4,h5 {font-family: "RobotoDraft", "Roboto", sans-serif}
+.w3-bar-block .w3-bar-item {padding: 16px}
+</style>
+<body>
+	<header>
+	  <div class="topnav">
+			<!--for text nav option-->
+			<div class="logo">
+					<img class= "logo-icon" src="assets/noun_drive_688149.png" alt width="35" height="35">
+					<p class="logotxt" href="Assignment3_base.html">GROUP8 CLOUD DRIVE</p>
+				</div>
+			<!--for search bar-->
+			<div class="search-container">
+				<a class="search" href="">
+					<img class="search-icon" src="assets/noun_Search_196585.png" alt width="35" height="35">
+				</a>
+				<input type="text" placeholder="Search..">
+			</div>
+			<a class="active" href="Assignment3_base.html">
+				<img src="assets/noun_Home_1701558.png" alt width="35" height="35">
+			</a>
+  			<a class="about" href="#about">
+				<img src="assets/noun_about_1982513.png" alt width="35" height="35">
+			</a>
+  			<a class="contact" href="#contact">
+				<img src="assets/noun_contact_1212121.png" alt width="35" height="35">
+			</a>
+		  	<a class="user" href="#user">
+				<img src="assets/noun_User_1625916.png" alt width="35" height="35">
+			</a>
+		</div>
+	</header>
+<!-- Side Navigation -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-white w3-animate-left w3-card" style="z-index:3;width:320px;overflow: hidden; margin-bottom: -3000px; padding-bottom: 3000px;position:absolute !important;" id="mySidebar">
+	<a href="javascript:void(0)" onclick="w3_close()" title="Close Sidemenu"
+	class="w3-bar-item w3-button w3-hide-large w3-large">Close <i class="fa fa-remove"></i></a>
+	<a href="javascript:void(0)" class="w3-bar-item w3-button w3-dark-grey w3-button w3-hover-black w3-left-align">New File <i class="w3-padding fa fa-pencil"></i></a>
+	<a id="myBtn" onclick="myFunc('Demo1')" href="javascript:void(0)" class="w3-bar-item w3-button"><i class="fa fa-inbox w3-margin-right"></i>My File (2)<i class="fa fa-caret-down w3-margin-left"></i></a>
+	<div id="Demo1" class="w3-hide w3-animate-left">
+		<a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('File1');w3_close();" id="firstTab">
+			<div class="w3-container">
+				<img class="w3-round w3-margin-right" src="assets/file2.png" style="width:15%;"><span class="w3-opacity w3-large">350 Assignment3</span>
+				<h6>HTML file</h6>
+				<p>...</p>
+			</div>
+		</a>
+		 <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('File2');w3_close();">
+			<div class="w3-container">
+				<img class="w3-round w3-margin-right" src="assets/file1.png" style="width:15%;"><span class="w3-opacity w3-large">350 Assignment4</span>
+				<h6>CSS file</h6>
+				<p>...</p>
+			</div>
+		</a>
+	</div>
+	<a href="javascript:void(0)" class="w3-bar-item w3-button w3-hover-black w3-left-align" onclick="document.getElementById('id01').style.display='block'"><i class="fa fa-paper-plane w3-margin-right"></i>Share File</a>
+	<a href="#" class="w3-bar-item w3-button"><i class="fa fa-hourglass-end w3-margin-right"></i>Canvas Submit</a>
+	<a href="#" class="w3-bar-item w3-button"><i class="fa fa-trash w3-margin-right"></i>Trash</a>
+	<a href="#" class="w3-bar-item w3-button" onclick="document.getElementById('id05').style.display='block'"><i class="fa fa-calendar-o w3-margin-right"></i>Announcement</a>
+	<a href="#" class="w3-bar-item w3-button" onclick="document.getElementById('id06').style.display='block'"><i class="fa fa-history w3-margin-right"></i>History</a>
+</nav>
+
+<!-- Modal that pops up when you click on "Share File" -->
+<div id="id01" class="w3-modal" style="z-index:4">
+	<div class="w3-modal-content w3-animate-zoom">
+		<div class="w3-container w3-padding w3-blue">
+			 <span onclick="document.getElementById('id01').style.display='none'"
+			 class="w3-button w3-blue w3-right w3-xxlarge"><i class="fa fa-remove"></i></span>
+			<h2>Share File with other</h2>
+		</div>
+		<div class="w3-panel">
+			<label>Files</label>
+			<div class="w3-container w3-padding w3-white">
+				<div class="w3-dropdown-click">
+					 <button id="btn1" onclick= "button_click('ic1')" class="w3-button w3-blue">350 Assignment3.html <i id = "ic1" class="fa fa-check" style="display: none; "></i>
+					 
+					 <button id="btn2" onclick="button_click('ic2')" class="w3-button w3-blue w3-right">350 Assignment4.css <i id= "ic2" class="fa fa-check" style="display: none;"></i>			
+				</div>
+			</div>
+			<label>Link sharing on</label>
+			<i class="fa fa-history w3-margin-right"></i>	
+			<div class="w3-container w3-padding w3-white">
+				<div class="w3-dropdown-click">
+					
+					 <button onclick="shareAuthority('Defalt')" class="w3-button w3-gray">Anyone with the link can edit <i class="fa fa-caret-square-o-down"></i></button>
+					 <div id="Defalt" class="w3-dropdown-content w3-bar-block w3-border">
+						  <a href="#" class="w3-bar-item w3-button">Anyone with the link can view it</a>
+						  <a href="#" class="w3-bar-item w3-button">Anyone with the link can comment it</a>
+					</div>
+					
+				</div>
+				<a class="w3-button w3-gray w3-right">Copy link</a>
+			</div>
+			<input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="https://350Assignment3.en">
+			<label>People</label>
+			<div class="w3-section w3-">
+				<i class="fa fa-edit w3-right w3-xxlarge"></i>
+				<input class="w3-input w3-border w3-margin-bottom"  placeholder="Enter email addresses or names..." style="width: 90%">
+				
+			</div>
+			<div class="w3-section">
+				<a class="w3-button w3-red" onclick="document.getElementById('id01').style.display='none'">Cancel  <i class="fa fa-remove"></i></a>
+				<a class="w3-button w3-light-grey w3-right" onclick="document.getElementById('id04').style.display='block'">Share  <i class="fa fa-paper-plane"></i></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal that pops up when you click on specific file -->
+<div id="id02" class="w3-modal" style="z-index:4">
+	<div class="w3-modal-content w3-animate-zoom">
+		<div class="w3-container w3-padding w3-blue">
+			 <span onclick="document.getElementById('id02').style.display='none'"
+			 class="w3-button w3-blue w3-right w3-xxlarge"><i class="fa fa-remove"></i></span>
+			<h2>Share "350 Assignment3.html" with other</h2>
+		</div>
+		<div class="w3-panel">
+			<label>Link sharing on</label>
+			<i class="fa fa-history w3-margin-right"></i>	
+			<div class="w3-container w3-padding w3-white">
+				<div class="w3-dropdown-click">
+					
+					 <button onclick="shareAuthority('Defalt1')" class="w3-button w3-gray">Anyone with the link can edit <i class="fa fa-caret-square-o-down"></i></button>
+					 <div id="Defalt1" class="w3-dropdown-content w3-bar-block w3-border">
+						  <a href="#" class="w3-bar-item w3-button">Anyone with the link can view it</a>
+						  <a href="#" class="w3-bar-item w3-button">Anyone with the link can comment it</a>
+					</div>
+					
+				</div>
+				<a class="w3-button w3-gray w3-right">Copy link</a>
+			</div>
+			<input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="https://350Assignment3.en">
+			<label>People</label>
+			<div class="w3-section w3-">
+				<i class="fa fa-edit w3-right w3-xxlarge"></i>
+				<input class="w3-input w3-border w3-margin-bottom"  placeholder="Enter email addresses or names..." style="width: 90%">
+				
+			</div>
+			<div class="w3-section">
+				<a class="w3-button w3-red" onclick="document.getElementById('id02').style.display='none'">Cancel  <i class="fa fa-remove"></i></a>
+				<a class="w3-button w3-light-grey w3-right" onclick="document.getElementById('id04').style.display='block'">Share  <i class="fa fa-paper-plane"></i></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+	
+<div id="id03" class="w3-modal" style="z-index:4">
+	<div class="w3-modal-content w3-animate-zoom">
+		<div class="w3-container w3-padding w3-blue">
+			 <span onclick="document.getElementById('id03').style.display='none'"
+			 class="w3-button w3-blue w3-right w3-xxlarge"><i class="fa fa-remove"></i></span>
+			<h2>Share "350 Assignment4.css" with other</h2>
+		</div>
+		<div class="w3-panel">
+			<label>Link sharing on</label>
+			<i class="fa fa-history w3-margin-right"></i>	
+			<div class="w3-container w3-padding w3-white">
+				<div class="w3-dropdown-click">
+					
+					 <button onclick="shareAuthority('Defalt2')" class="w3-button w3-gray">Anyone with the link can edit <i class="fa fa-caret-square-o-down"></i></button>
+					 <div id="Defalt2" class="w3-dropdown-content w3-bar-block w3-border">
+						  <a href="#" class="w3-bar-item w3-button">Anyone with the link can view it</a>
+						  <a href="#" class="w3-bar-item w3-button">Anyone with the link can comment it</a>
+					</div>
+					
+				</div>
+				<a class="w3-button w3-gray w3-right">Copy link</a>
+			</div>
+			<input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="https://350Assignment4.en">
+			<label>People</label>
+			<div class="w3-section w3-">
+				<i class="fa fa-edit w3-right w3-xxlarge"></i>
+				<input class="w3-input w3-border w3-margin-bottom"  placeholder="Enter email addresses or names..." style="width: 90%">
+				
+			</div>
+			<div class="w3-section">
+				<a class="w3-button w3-red" onclick="document.getElementById('id03').style.display='none'">Cancel  <i class="fa fa-remove"></i></a>
+				<a class="w3-button w3-light-grey w3-right" onclick="document.getElementById('id04').style.display='block'">Share  <i class="fa fa-paper-plane"></i></a>
+			</div>
+		</div>
+	</div>
+</div>	
+
+<!-- Modal that pops up when you click on "Share" inside "Share file" -->
+<div id="id04" class="w3-modal" style="z-index:4">
+	<div class="w3-modal-content w3-animate-zoom w3-green">
+		<div class="w3-container w3-padding">
+			<span onclick="document.getElementById('id04').style.display='none'; document.getElementById('id03').style.display='none'; document.getElementById('id02').style.display='none';document.getElementById('id01').style.display='none'"
+			 class="w3-button w3-right w3-large"><i class="fa fa-remove"></i></span>
+			<h2>Successed!</h2>
+			<label>The file has been shared successfully!</label>
+		</div>
+	</div>
+</div>
+
+<!-- Modal that pops up when you click on "Annoucement" -->
+<div id="id05" class="w3-modal" style="z-index:4">
+  	<div class="w3-modal-content w3-animate-zoom">
+		<div class="w3-container w3-padding w3-blue-gray">
+		   <span onclick="document.getElementById('id05').style.display='none'"
+		   class="w3-button w3-red w3-right w3-xxlarge"><i class="fa fa-remove"></i></span>
+		  <h2>Announcement</h2>
+		</div>
+
+		<div class="AnnouncementDiv">
+		  <h3>Announcement feature added--From Jigao</h3>
+		  <p>Hey guys! I have added a new feature which allows user to make annoucement. Cheers!</p>
+		</div>
+
+		<div class="AnnouncementDiv">
+		  <h3>Come to see my nice header--From Evan</h3>
+		  <p>Hey teams! I have made a nice header, come and see it!</p>
+		</div>
+
+		<div class="AnnouncementDiv">
+		  <h3>Advanced sharing feature--From Zheyuan</h3>
+		  <p>Now the user can copy and share the link directly, we can do better than google drive!</p>
+		</div>
+
+		<div class="AnnouncementDiv">
+		  <h3>Home page are out--From Yuxin</h3>
+		  <p>Hey guys! I have designed a clear and concise home page which is easy to use for our user. Now we can add more detailed features!</p>
+		</div>
+		 <div class="w3-section">
+			<a class="w3-button w3-red" onclick="document.getElementById('id05').style.display='none'">Exit  <i class="fa fa-remove"></i></a>
+			<a class="w3-button w3-light-grey w3-right">Make announcement  <i class="fa fa-plus"></i></a>
+		</div>
+    </div>
+</div>
+		
+<!-- Modal that pops up when you click on "Annoucement" -->
+<div id="id06" class="w3-modal" style="z-index:4">
+  	<div class="w3-modal-content w3-animate-zoom">
+		<div class="w3-container w3-padding w3-blue-gray">
+		   <span onclick="document.getElementById('id06').style.display='none'"
+		   class="w3-button w3-red w3-right w3-xxlarge"><i class="fa fa-remove"></i></span>
+		  <h2>History</h2>
+		</div>
+
+		<div class="AnnouncementDiv">
+		  <h3>Tony Xiao has edited 350 Assignment3.html today on 13:30</h3>
+		</div>
+
+		<div class="AnnouncementDiv">
+		  <h3>Evan Zhou has shared 350 Assignment4.css with you yesterday on 23:18</h3>
+		</div>
+
+		<div class="AnnouncementDiv">
+		  <h3>Jigao Zeng has edited 350 Assignment3.html on wednesday on 10:20</h3>
+		</div>
+
+		<div class="AnnouncementDiv">
+			<h3>Yuxin Chen has shared 350 Assignment3.html with you on Monday on 12:00</h3>
+		</div>
+		 <div class="w3-section">
+			<a class="w3-button w3-red" onclick="document.getElementById('id06').style.display='none'">Exit  <i class="fa fa-remove"></i></a>
+		</div>
+    </div>
+</div>
+<!-- Overlay effect when opening the side navigation on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="Close Sidemenu" id="myOverlay"></div>
+
+<!-- Page content -->
+<div class="w3-container" style="position: relative">
+ <div class="w3-card-4 w3-dark-grey" style="position: absolute; width: 300px; margin-left:350px; margin-top:20px;">
+  <div class="w3-container w3-center">
+    <h3>350 Assignment3.html</h3>
+    <img src="assets/file1.png" width="100" height="200" alt="File1" style="width:90%">
+    <div class="w3-section">
+	   <button class="w3-button w3-green" onclick="document.getElementById('id02').style.display='block'">Share</button>
+	   <button class="w3-button w3-red">Delete</button>
+    </div>
+  </div>
+ </div>
+</div>
+
+<div class="w3-container" style="position: relative">
+ <div class="w3-card-4 w3-dark-grey" style="position: absolute; width:300px; margin-left:700px; margin-top:20px;">
+  <div class="w3-container w3-center">
+    <h3>350 Assignment4.css</h3>
+    <img src="assets/file2.png" width="100" height="200" alt="File2" style="width:90%">
+    <div class="w3-section">
+	   <button class="w3-button w3-green" onclick="document.getElementById('id02').style.display='block'">Share</button>
+	   <button class="w3-button w3-red">Delete</button>
+    </div>
+  </div>
+ </div>
+</div>
+
+<script>
+var openInbox = document.getElementById("myBtn");
+openInbox.click();
+
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+function myFunc(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-red";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className =
+    x.previousElementSibling.className.replace(" w3-red", "");
+  }
+}
+
+doShare("File1")
+function doShare(fileName) {
+  var i;
+  var x = document.getElementsByClassName("file");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x = document.getElementsByClassName("test");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" w3-light-grey", "");
+  }
+  document.getElementById(fileName).style.display = "block";
+  event.currentTarget.className += " w3-light-grey";
+}
+</script>
+
+<script>
+var openTab = document.getElementById("firstTab");
+openTab.click();
+</script>
+	
+<script>
+function shareAuthority(drop_down_id) {
+  	var x = document.getElementById(drop_down_id);
+
+	if (x.className.indexOf("w3-show") == -1) {
+		x.className += " w3-show";
+
+	} else { 
+		x.className = x.className.replace(" w3-show", "");
+	}
+	
+}
+</script>
+	
+<script>
+function announce {
+  var announcement = document.getElementById("");
+  popup.classList.toggle("show");
+	
+}
+	
+
+
+
+</script>
+		
+<script>
+var btn1_bol = true;
+var btn2_bol = true;
+function button_click(icon_number){
+	if (icon_number == "ic1"){
+		if (btn1_bol){
+			document.getElementById(icon_number).style.display="block";
+			btn1_bol = !btn1_bol;
+		}else{
+			document.getElementById(icon_number).style.display="none";
+			btn1_bol = !btn1_bol;
+		}	
+		
+	}else{
+		if (btn2_bol){
+			document.getElementById(icon_number).style.display="block";
+			btn2_bol = !btn2_bol;
+		}else{
+			document.getElementById(icon_number).style.display="none";
+			btn2_bol = !btn2_bol;
+		
+		}
+	}
+}
+		
+		
+</script>
+
+</body>
+</html>

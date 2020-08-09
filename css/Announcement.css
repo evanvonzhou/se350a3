@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+.AnnouncementDiv {
+  border: 5px outset aliceblue;
+  background-color: aliceblue;    
+  text-align: left;
+  margin: 20px;
+}
+
+.AnnouncementDiv:hover{
+		background-color: lightblue;
+	}
+

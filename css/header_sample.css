@@ -1,0 +1,169 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/* Add a black background color to the top navigation bar */
+.topnav {
+	display: flex;
+  	overflow: hidden;
+  	background-color: #FFFFFF;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #000;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 16px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: transparent;
+  color: black;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+/*  background-color: #2196F3;*/
+  color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+	width: 100%;
+	border: transparent;
+ 	align-items: center;
+	justify-content: center;
+	outline: none;
+}
+
+.search-container{
+	width: 600px;
+	height: 51px; 
+	margin-right: auto;
+	background: transparent;
+	border: 1px solid #000;
+	border-radius: 10px;
+	align-items: center;
+	display: flex;
+	position:relative;
+}
+
+.search-icon{
+	background: transparent;
+	border-radius: 20px;
+	align-items: center;
+	justify-content: center;
+	margin-left: 10px;
+}
+.active{
+	position:relative;
+	padding: 0px 8px;
+}
+.about{
+	position:relative;
+	padding: 0px 8px;
+}
+.contact{
+	position:relative;
+/*	margin-left:85%;*/
+	padding: 0px 8px;
+}
+.user{
+	position:relative;
+/*	margin-left:90%;*/
+	padding: 0px 8px;
+}
+.active:hover{
+	background: transparent!important;
+}
+.about:hover{
+	background: transparent!important;
+}
+.contact:hover{
+	background: transparent!important;
+}
+.user:hover{
+	background: transparent!important;
+}
+img{
+	border: transparent;
+	border-radius: 0px;
+	margin-left: 0px;
+/*	animation: onimg 4s;*/
+}
+img:hover{
+	animation: onimg 2s ease;
+}
+.logotxt{
+	width:100%;
+/*	float: right;*/
+/* 	display: flex;*/
+  	color: black;
+  	text-align: center;
+  	padding: 16px 16px;
+  	text-decoration: none;
+  	font-size: 17px;
+/*
+	margin-left:0px;
+	padding-right: 60px;
+*/
+	postion:relative;
+}
+.logotxt:hover{
+	animation: onimg 2s ease;
+}
+.logo{
+	max-width: 300px!important;
+	width:100%;
+	align-items: center;
+/*	justify-content: center;*/
+	display: flex;
+	position:relative;
+/*	margin-left:20px;*/
+}
+.logo-icon{
+	border-radius: 0px;
+	margin-left:20px;
+}
+.search:hover{
+	background-color: transparent!important;
+	animation: onsearch 1s ease;
+}
+
+@keyframes onsearch{
+	0%{
+    transform: rotate(0deg);
+  }
+/*
+  50%{
+	transform: rotate(180deg);
+  }
+*/
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes onimg{
+	0%{
+    opacity: 0.25;
+  }
+  30%{
+	opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+}
